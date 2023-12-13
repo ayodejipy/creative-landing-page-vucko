@@ -1,0 +1,30 @@
+@use "sass:meta";
+@use "sass:map";
+@use "sass:math";
+@use "breakpoints" as *;
+
+@mixin mq($size) {
+	// check if $size is defined in our breakpoints
+	@if map.has-key($breakpoints, $size) {
+		// if true, get the breakpoint and add it to our media query
+		$breakpoint: map-get($breakpoints, $size);
+		@media screen and (min-width: $breakpoint) {
+			@content
+		}
+	} @else if meta.type-of($size) == 'number' {
+		@if math.is-unitless($size) {
+			@error "($size) should include a unit."
+		} @else {
+			@media screen and (min-width: $size) {
+				@content
+			}
+		}
+	} @else {
+		@error "($size) is not found in the breakpoints map."
+	}
+}
+
+
+@mixin spacer() {
+	
+}

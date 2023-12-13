@@ -1,0 +1,14 @@
+@use '../abstract' as *;
+
+:root {
+  @each $color, $shades-map in $active-theme {
+    @each $shade, $value in $shades-map {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  // generate sizes
+  @each $size, $value in $sizes {
+    --#{$size}: #{$value};
+  }
+}

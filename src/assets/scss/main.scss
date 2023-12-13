@@ -1,0 +1,21 @@
+@forward "abstract";
+@forward "base";
+@forward "utilities";
+
+
+// global styles
+.underlined {
+	--bottom-offset: -0.375rem;
+	--line-size: 0.06rem;
+	color: clr(neutral, '900');
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: var(--bottom-offset, 0);
+		width: 100%;
+		height: var(--line-size);
+		background-color: currentColor;
+	}
+}

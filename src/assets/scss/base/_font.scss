@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Suisse Int'l Book";
+  font-weight: normal;
+  font-display: swap;
+  src:
+    url('@/assets/fonts/suisse-intl-book-webfont.woff2') format('woff2'),
+    url("@/assets/fonts/Suisse\ Int'l\ Book.woff2") format('woff2'),
+    url('@/assets/fonts/suisse-intl-book-webfont.woff') format('woff');
+}

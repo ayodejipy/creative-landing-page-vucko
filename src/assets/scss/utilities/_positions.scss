@@ -1,0 +1,25 @@
+$positions: static, fixed, absolute, relative, sticky;
+
+@each $position in $positions {
+	.#{$position} {
+		position: $position;
+	}
+}
+
+// Mixin not exposed
+$position-directions: top, right, bottom, left;
+@mixin inset($value: 0) {
+    top: $value;
+	right: $value;
+	left: $value;
+	bottom: $value;
+}
+@mixin inset-x($value: 0) {
+	left: $value;
+	right: $value;
+}
+@mixin inset-y($value: 0) {
+    top: $value;
+	bottom: $value;
+}
+

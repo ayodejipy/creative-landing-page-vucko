@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sizes" as *;
+@use "colors" as *;
+
+// set active color option
+$active-theme: $light;
+
+@function clr($color, $shade, $scheme: $active-theme) {
+	$map: null;
+	@if $scheme == "light" {
+		$map: $light;
+	} @else if $scheme == "dark" {
+		$map: $dark;
+	} @else if $scheme == $active-theme {
+		$map: $active-theme;
+	} @else {
+		@error "Invalid scheme";
+	}
+
+	@if map.has-key($map, $color, $shade) {
+		@return map-get($map, $color, $shade)
+	} @else {
+		@error "$color is not supported"
+	}
+};
+
+@function size($size) {
+  @if map.has-key($sizes, $size) {
+    @return map.get($sizes, $size);
+  } @else {
+    @error '$sizes does not have that size!';
+  }
+};
+
+// @function size($multiplier, $base-unit: 1rem) {
+// 	@if meta.type-of($multiplier) == number {
+// 		@return ($multiplier * $base-unit)
+// 	} @else {
+// 		@error "Size #{$multiplier} must be a number"
+// 	}
+// };

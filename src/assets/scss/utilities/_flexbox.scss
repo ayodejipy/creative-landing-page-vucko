@@ -1,0 +1,52 @@
+@mixin flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+$flex: -webkit-box, -ms-flexbox, flex;
+.flex {
+	@each $display in $flex {
+		display: $display
+	}
+}
+
+$flex-inline: -webkit-inline-box, -ms-inline-flexbox, inline-flex;
+.flex-inline {
+	@each $display in $flex-inline {
+		display: $display
+	}
+}
+
+
+// flex-direction
+$flex-directions: row, row-reverse, column, column-reverse;
+@each $direction in $flex-directions {
+	.flex-#{$direction} {
+		-ms-flex-direction: $direction;
+  		flex-direction: $direction;
+	}
+}
+
+// flex-wrap
+$flex-wrapping: nowrap, wrap;
+@each $wrap in $flex-wrapping {
+	.flex-#{$wrap} {
+		-ms-flex-wrap: $wrap;
+  		flex-wrap: $wrap;
+	}
+}
+
+// justify-content
+$justify-content-options: center, flex-start, flex-end, space-between, space-around;
+@each $justify in $justify-content-options {
+	.content-#{$justify} {
+		justify-content: $justify;
+	}
+}
+// align-items
+$align-items-options: center, flex-start, flex-end, stretch;
+@each $option in $align-items-options {
+	.items-#{$option} {
+		align-items: $option;
+	}
+}
