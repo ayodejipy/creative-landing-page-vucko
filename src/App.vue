@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import TheHeader from './components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
 // import RenderedComponent from './components/RenderedComponent.vue'
 import { defineCustomElement, onMounted, h, reactive } from 'vue'
 
@@ -32,6 +33,7 @@ customElements.define('cc-vue-element', MyVueElement)
 
         <RouterView />
     </div>
+    <TheFooter />
 </template>
 
 <style lang="scss">
@@ -40,7 +42,7 @@ customElements.define('cc-vue-element', MyVueElement)
     padding-inline: size(6);
 
     @include mq('md') {
-        padding-inline: size(8);
+        padding-inline: size(10);
     }
 }
 </style>

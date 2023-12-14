@@ -40,14 +40,20 @@ const services = ref<Services[]>([
             <a href="#" class="relative underlined">Learn more about our approach</a>
 		</div>
 
-        <div class="brand__content">
-            <h2>We go beyond animation.</h2>
-            <p>Transforming brands into dynamic brand experiences. </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, nobis molestias ratione voluptatum similique ducimus inventore laboriosam blanditiis natus ut illum in. Incidunt sit quo numquam ad deserunt voluptatem ea.
-            </p>
-            
-            <a href="#" class="relative underlined">Learn more about us</a>
+        <div class="brand">
+            <div class="brand__img">
+                <img src="https://images.unsplash.com/photo-1698050556933-240364f29622?auto=format&fit=crop&q=80&w=3387&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="cover image">
+            </div>
+
+            <div class="brand__content">
+                <h2>We go beyond animation.</h2>
+                <p>Transforming brands into dynamic brand experiences. </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, nobis molestias ratione voluptatum similique ducimus inventore laboriosam blanditiis natus ut illum in. Incidunt sit quo numquam ad deserunt voluptatem ea.
+                </p>
+                
+                <a href="#" class="relative underlined">Learn more about us</a>
+            </div>
         </div>
 	</section>
 </template>
@@ -107,21 +113,27 @@ section#services {
         }
     }
 
-    .brand__content {
-        h2 {
-            font-size: size(9);
+    .brand {
+        &__img {
+            display: none;
         }
 
-        p {
-            font-size: size(6);
-            line-height: 1.4;
-            color: clr(neutral, '500');
-            margin-block: size(10);
-        }
-
-        a {
-            display: inline-block;
-            font-size: size(5);
+        &__content {
+            h2 {
+                font-size: size(9);
+            }
+    
+            p {
+                font-size: size(6);
+                line-height: 1.4;
+                color: clr(neutral, '500');
+                margin-block: size(10);
+            }
+    
+            a {
+                display: inline-block;
+                font-size: size(5);
+            }
         }
     }
 }

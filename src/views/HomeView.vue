@@ -3,7 +3,6 @@ import VuckoLogo from '@/components/logo/VuckoLogo.vue'
 import ShowReel from '@/components/ShowReel.vue'
 import SelectedProjects from '@/components/SelectedProjects.vue'
 import OurServices from '@/components/OurServices.vue'
-import TheFooter from '@/components/TheFooter.vue'
 
 let name: any = "tunde"
 name = 5
@@ -48,7 +47,6 @@ console.log(name)
 
         <SelectedProjects />
         <OurServices />
-        <TheFooter />
     </main>
 </template>
 
