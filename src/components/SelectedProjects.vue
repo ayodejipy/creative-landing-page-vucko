@@ -2,7 +2,11 @@
 
 <template>
     <section id="work" class="relative flex">
-        <h2>Work</h2>
+        <div class="heading flex items-flex-end content-space-between">
+            <h2>Work</h2>
+            <p class="catchphrase">From fast-growing brands to Fortune 50’s.</p>
+            <p>(Projects)</p>
+        </div>
         <div class="projects">
             <div class="project__card">
                 <div class="relative project__card-image">
@@ -37,25 +41,45 @@ section#work {
     gap: 1rem;
     margin-bottom: size(15);
 
-    h2 {
-        text-transform: uppercase;
-        font-weight: $font-weight-bold;
-        font-size: size(13);
+    .heading {
+        h2 {
+            text-transform: uppercase;
+            font-weight: $font-weight-bold;
+            font-size: size(13);
+        }
+
+        @include mq("md") {
+
+            h2 {
+                font-weight: 700;
+                font-size: calc(size(13) * 2.5);
+                line-height: calc(size(15) + 0.8rem);
+            }
+
+            p.catchphrase {
+                flex: 0 0 12%;
+            }
+        }
     }
 
     .projects {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8rem 1.2rem;
+        margin-top: size(11);
 
         .project__card {
             grid-column: 1 / span 2;
 
+            @include mq("md") {
+                grid-column: span 1 / span 1;
+            }
+
             .project__card-image {
                 width: 100%;
                 height: 100%;
-                border-radius: 1.05rem;
-                min-height: 25.5rem;
+                min-height: 45.5rem;
+                border-radius: 0.75rem;
                 overflow: hidden;
                 margin-bottom: size(5);
 
@@ -80,16 +104,34 @@ section#work {
     }
 
     .navigation {
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         margin-top: size(15);
+
         a {
             display: inline-block;
             color: clr(neutral, '800');
             font-size: size(9);
+            width: max-content;
 
             &.underlined {
                 --line-size: 0.08rem;
             }
+        }
+
+        @include mq("md") {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: calc(size(15) * 1.2);
+
+            a {
+                grid-column: 2 / span 2;
+                font-size: size(12);
+
+                &.underlined {
+                --line-size: 0.20rem;
+            }
+            }
+            
         }
     }
 }

@@ -42,7 +42,7 @@ customElements.define('cc-vue-element', MyVueElement)
     padding-inline: size(6);
 
     @include mq('md') {
-        padding-inline: size(10);
+        padding-inline: size(5);
     }
 }
 </style>
