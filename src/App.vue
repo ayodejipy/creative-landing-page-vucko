@@ -25,6 +25,7 @@ customElements.define('cc-vue-element', MyVueElement)
 //             'customApp'
 //         )!.innerHTML = `<my-vue-element message="Hello Big man"></my-vue-element>`)
 // )
+
 </script>
 
 <template>
